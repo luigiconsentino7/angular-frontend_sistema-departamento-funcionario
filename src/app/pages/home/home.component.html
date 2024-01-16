@@ -1,0 +1,55 @@
+<div class="departamento-box">
+  <div class="input-box">
+    <label>Buscar departamento</label>
+    <input type="text" placeholder="Digite aqui" (input)="search($event)">
+  </div>
+</div>
+
+<div>
+  <h1>Departamentos:</h1>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>ID</th>
+      <th>Departamento</th>
+      <th>Sigla</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody *ngFor="let departamento of departamentosList">
+    <tr>
+      <td>
+        <div *ngIf="departamento.ativo == true; else inativo">
+          <img src="assets/images/Ativo.png" alt="" style="height: 20px; width: 20px;">
+        </div>
+
+        <ng-template #inativo>
+          <img src="assets/images/Inativo.png" alt="" style="height: 20px; width: 20px;">
+        </ng-template>
+
+
+      </td>
+      <td> {{departamento.id}} </td>
+      <td> {{departamento.nome}} </td>
+      <td> {{departamento.sigla}} </td>
+      <td>
+        <button routerLink="funcionarios-departamento/{{departamento.id}}">Acessar departamento</button>
+      </td>
+      <td>
+        <button routerLink="/editar-departamento/{{departamento.id}}">Editar</button>
+        <button>Excluir</button>
+      </td>
+
+    </tr>
+  </tbody>
+
+</table>
+
+  <div>
+    <button routerLink="/cadastro-departamento">Cadastrar novo departamento</button>
+  </div>

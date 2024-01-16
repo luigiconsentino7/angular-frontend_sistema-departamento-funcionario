@@ -1,0 +1,56 @@
+<div class="funcionario-box">
+  <div class="input-box">
+    <label>Buscar departamento</label>
+    <input type="text" placeholder="Digite aqui">
+  </div>
+</div>
+
+<div>
+  <h1>Funcionários:</h1>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>RG</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+<tbody>
+  <tr *ngFor="let funcionario of funcionariosList">
+    <td>
+      <div *ngIf="funcionario.ativo; else inativo">
+        <img src="assets/images/Ativo.png" alt="" style="height: 20px; width: 20px;">
+      </div>
+      <ng-template #inativo>
+        <img src="assets/images/Inativo.png" alt="" style="height: 20px; width: 20px;">
+      </ng-template>
+    </td>
+    <td>{{ funcionario.id }}</td>
+    <td>{{ funcionario.nome }}</td>
+    <td>{{ funcionario.sobrenome }}</td>
+    <td>{{ funcionario.rg }}</td>
+    <td>
+    </td>
+    <td>
+      <button>Editar</button>
+      <button>Excluir</button>
+    </td>
+  </tr>
+</tbody>
+
+</table>
+
+<div>
+  <button>Cadastrar novo funcionário</button>
+</div>
+
+<div>
+  <button routerLink="">Voltar</button>
+</div>
