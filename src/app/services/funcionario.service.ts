@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class FuncionarioService {
+
   imageUrl!: string;
 
   private apiUrlFuncionarioGetAll = `${environment.ApiUrl}/funcionarios/GetAllFuncionarios`
@@ -16,6 +18,7 @@ export class FuncionarioService {
   private apiUrlFuncionarioPost = `${environment.ApiUrl}/funcionarios/PostFuncionario`
   private apiUrlFuncionarioUpdate = `${environment.ApiUrl}/funcionarios/UpdateFuncionario`
   private apiUrlFuncionarioDisable = `${environment.ApiUrl}/funcionarios/DisableFuncionario`
+  private apiUrlFuncionarioEnable = `${environment.ApiUrl}/funcionarios/EnableFuncionario`
   private apiUrlFuncionarioDelete = `${environment.ApiUrl}/funcionarios/DeleteFuncionario`
   private apiUrlUploadImagemId = `${environment.ApiUrl}/funcionarios/UploadImagem`
 
@@ -45,6 +48,10 @@ export class FuncionarioService {
     return this.http.delete<Funcionarios[]>(`${this.apiUrlFuncionarioDisable} ${id}`);
   }
 
+  EnableFuncionario(funcionario: Funcionarios, id: number) : Observable<Funcionarios[]>{
+    return this.http.post<Funcionarios[]>(`${this.apiUrlFuncionarioEnable} ${id}`, funcionario);
+  }
+
   DeleteFuncionario(funcionario: Funcionarios, id : number) : Observable<Funcionarios[]>{
     return this.http.delete<Funcionarios[]>(`${this.apiUrlFuncionarioDelete} ${id}`);
   }
@@ -55,6 +62,5 @@ export class FuncionarioService {
 
     return this.http.post<any>(`${this.apiUrlUploadImagemId}/${id}`, formData);
   }
-
 
 }

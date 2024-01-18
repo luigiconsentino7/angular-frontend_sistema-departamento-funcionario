@@ -1,6 +1,7 @@
 <h1>{{btnTitulo}}</h1>
 
 <form [formGroup]="funcionarioForm" (ngSubmit)="submit()" #formDit="ngForm">
+
   <div class="input-box">
     <label for="">Nome</label>
     <input type="text" formControlName="nome" placeholder="Insira o nome do funcionário" required>
@@ -23,7 +24,7 @@
 
   <div class="btn-box">
     <button type="submit" [disabled]="!funcionarioForm.valid">{{btnAcao}}</button>
-    <button routerLink="">Voltar para a tela inicial</button>
+    <button (click)="voltar()">Voltar</button>
   </div>
 
 </form>

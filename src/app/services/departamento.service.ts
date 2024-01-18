@@ -7,6 +7,7 @@ import { Departamentos } from '../models/Departamentos';
 @Injectable({
   providedIn: 'root'
 })
+
 export class DepartamentoService {
 
   private apiUrlDepartamentoGetAll = `${environment.ApiUrl}/departamentos/GetAllDepartamentos`
@@ -14,8 +15,8 @@ export class DepartamentoService {
   private apiUrlDepartamentoUpdate = `${environment.ApiUrl}/departamentos/UpdateDepartamento`
   private apiUrlDepartamentoGetId = `${environment.ApiUrl}/departamentos/GetDepartamentos`
   private apiUrlDepartamentoDisable = `${environment.ApiUrl}/departamentos/DisableDepartamento`
+  private apiUrlDepartamentoEnable = `${environment.ApiUrl}/departamentos/EnableDepartamento`
   private apiUrlDepartamentoDelete = `${environment.ApiUrl}/departamentos/DeleteDepartamento`
-
 
   constructor( private http: HttpClient ) { }
 
@@ -39,9 +40,12 @@ export class DepartamentoService {
     return this.http.delete<Departamentos[]>(`${this.apiUrlDepartamentoDisable} ${id}`);
   }
 
-  DeleteDepartamento(departamento: Departamentos, id : number) : Observable<Departamentos[]>{
-    return this.http.delete<Departamentos[]>(`${this.apiUrlDepartamentoDelete}/${id}`);
+  EnableDepartamento(departamento: Departamentos, id: number) : Observable<Departamentos[]>{
+    return this.http.post<Departamentos[]>(`${this.apiUrlDepartamentoEnable} ${id}`, departamento);
   }
 
+  DeleteDepartamento(id : number) : Observable<Departamentos[]>{
+    return this.http.delete<Departamentos[]>(`${this.apiUrlDepartamentoDelete}/${id}`);
+  }
 
 }

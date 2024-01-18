@@ -8,7 +8,9 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
   templateUrl: './editar-funcionario.component.html',
   styleUrls: ['./editar-funcionario.component.css']
 })
+
 export class EditarFuncionarioComponent {
+
   funcionario!: Funcionarios;
   btnAcao: string = "Editar"
   btnTitulo: string = "Editar Funcionario"
@@ -21,7 +23,6 @@ export class EditarFuncionarioComponent {
       console.log(id)
       this.funcionarioService.GetFuncionarioId(id).subscribe((data)=> {
         this.funcionario = data;
-
       })
   }
 
@@ -31,7 +32,5 @@ export class EditarFuncionarioComponent {
       this.router.navigate([`/funcionarios-departamento/${funcionario.departamentoId}`])
     });
   }
-
-
 
 }

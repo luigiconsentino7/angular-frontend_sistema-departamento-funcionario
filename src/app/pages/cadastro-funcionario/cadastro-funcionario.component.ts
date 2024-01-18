@@ -8,18 +8,18 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
   templateUrl: './cadastro-funcionario.component.html',
   styleUrls: ['./cadastro-funcionario.component.css']
 })
+
 export class CadastroFuncionarioComponent {
+
   btnAcao = "Cadastrar"
   btnTitulo = "Cadastrar Funcionário"
 
-  constructor(private funcionarioService : FuncionarioService, private router: Router){
-
-  }
-
+  constructor(private funcionarioService : FuncionarioService, private router: Router) {}
 
   createFuncionario(funcionario: Funcionarios){
     this.funcionarioService.CreateFuncionario(funcionario).subscribe((data) => {
-      this.router.navigate(['/'])
+      window.history.go(-1)
     });
   }
+
 }

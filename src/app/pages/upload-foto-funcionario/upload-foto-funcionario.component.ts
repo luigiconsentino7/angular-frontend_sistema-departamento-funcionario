@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FuncionarioService } from 'src/app/services/funcionario.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './upload-foto-funcionario.component.html',
   styleUrls: ['./upload-foto-funcionario.component.css']
 })
+
 export class UploadFotoFuncionarioComponent {
 
   imageUrl!: string;
@@ -23,7 +24,7 @@ export class UploadFotoFuncionarioComponent {
     if (this.selectedFile) {
       this.funcionarioService.UploadImagem(this.selectedFile, id).subscribe({
         next: (response) => {
-          this.router.navigate([''])
+          window.history.go(-1);
         },
         error: (error) => {
           console.error('Erro no upload:', error);
@@ -33,7 +34,5 @@ export class UploadFotoFuncionarioComponent {
       console.warn('Nenhum arquivo selecionado.');
     }
   }
-
-
 
 }

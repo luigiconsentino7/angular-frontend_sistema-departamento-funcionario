@@ -1,0 +1,20 @@
+<mat-card>
+
+<div>
+  <h1 style="text-align: center;">Deseja confirmar a exclusão?</h1>
+  <div>
+    <h2>ID:</h2>
+    <p>{{departamento.id}}</p>
+    <h2>Departamento:</h2>
+    <p>{{departamento.nome}}</p>
+    <h2>Sigla:</h2>
+    <p>{{departamento.sigla}}</p>
+  </div>
+
+  <div>
+    <button mat-raised-button color="warn" (click)="Delete()">Confirmar exclusão</button>
+    <button mat-raised-button (click)="Cancelar()">Voltar</button>
+  </div>
+</div>
+
+</mat-card>

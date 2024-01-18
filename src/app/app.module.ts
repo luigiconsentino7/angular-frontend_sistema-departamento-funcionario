@@ -17,8 +17,16 @@ import { FuncionarioFormComponent } from './components/funcionario-form/funciona
 import { CadastroFuncionarioComponent } from './pages/cadastro-funcionario/cadastro-funcionario.component';
 import { UploadFotoFuncionarioComponent } from './pages/upload-foto-funcionario/upload-foto-funcionario.component';
 import { EditarFuncionarioComponent } from './pages/editar-funcionario/editar-funcionario.component';
-import { DeletarDepartamentoComponent } from './pages/deletar-departamento/deletar-departamento.component';
 import { DeletarFuncionarioComponent } from './pages/deletar-funcionario/deletar-funcionario.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Angular Material
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ExcluirComponent } from './components/excluir/excluir.component';
 
 
 @NgModule({
@@ -33,8 +41,8 @@ import { DeletarFuncionarioComponent } from './pages/deletar-funcionario/deletar
     CadastroFuncionarioComponent,
     UploadFotoFuncionarioComponent,
     EditarFuncionarioComponent,
-    DeletarDepartamentoComponent,
-    DeletarFuncionarioComponent
+    DeletarFuncionarioComponent,
+    ExcluirComponent
 
   ],
   imports: [
@@ -43,7 +51,13 @@ import { DeletarFuncionarioComponent } from './pages/deletar-funcionario/deletar
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

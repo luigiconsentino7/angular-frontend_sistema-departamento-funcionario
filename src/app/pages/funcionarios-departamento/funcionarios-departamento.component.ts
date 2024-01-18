@@ -8,11 +8,11 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
   templateUrl: './funcionarios-departamento.component.html',
   styleUrls: ['./funcionarios-departamento.component.css']
 })
+
 export class FuncionariosDepartamentoComponent implements OnInit{
 
   funcionariosList: Funcionarios[] = [];
   funcionariosListGeral: Funcionarios [] = [];
-
   funcionario!: Funcionarios;
 
   constructor( private funcionarioService : FuncionarioService, private route: ActivatedRoute, private router: Router){}
@@ -23,19 +23,17 @@ export class FuncionariosDepartamentoComponent implements OnInit{
     console.log('Funcionários do departamento:', this.funcionariosList);
   }
 
-ngOnInit(): void {
-  const id = Number(this.route.snapshot.paramMap.get('id'));
-  this.funcionarioService.GetFuncionariosDepartamentoId(id).subscribe({
-    next: data => this.handleResponse(data),
-    error: error => console.error('Erro ao obter dados:', error)
+  ngOnInit(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.funcionarioService.GetFuncionariosDepartamentoId(id).subscribe({
+      next: data => this.handleResponse(data),
+      error: error => console.error('Erro ao obter dados:', error)
     });
-
   }
 
   search(event : Event){
     const target = event.target as HTMLInputElement;
     const value = target.value.toLowerCase();
-
     this.funcionariosList = this.funcionariosListGeral.filter(funcionario => {
       return funcionario.nome.toLowerCase().includes(value);
     })
@@ -43,9 +41,14 @@ ngOnInit(): void {
 
   DisableFuncionario(id: number){
     this.funcionarioService.DisableFuncionario(id).subscribe((data) => {
-      this.router.navigate([''])
+      location.reload()
     })
   }
 
+  EnableFuncionario(funcionario: Funcionarios, id: number){
+    this.funcionarioService.EnableFuncionario(funcionario, id).subscribe((data) => {
+      location.reload()
+    })
+  }
 
 }

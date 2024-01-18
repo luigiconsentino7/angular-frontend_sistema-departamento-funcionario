@@ -1,0 +1,20 @@
+.logo img{
+  margin-bottom: 30px;
+}
+
+.departamento-box{
+  width: 100%;
+  gap: 15px;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: left;
+  margin-bottom: 2rem;
+}
+
+.btn-cadastro{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}

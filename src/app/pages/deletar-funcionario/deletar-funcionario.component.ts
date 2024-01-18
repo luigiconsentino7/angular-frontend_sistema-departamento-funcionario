@@ -8,6 +8,7 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
   templateUrl: './deletar-funcionario.component.html',
   styleUrls: ['./deletar-funcionario.component.css']
 })
+
 export class DeletarFuncionarioComponent {
 
   funcionario!: Funcionarios;
@@ -18,7 +19,12 @@ export class DeletarFuncionarioComponent {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     console.log(id)
     this.funcionarioService.DeleteFuncionario(funcionario, id).subscribe((data) => {
-      this.router.navigate([''])
+      window.history.go(-1)
     })
   }
+
+  voltar(): any {
+    window.history.go(-1);
+  }
+
 }

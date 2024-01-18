@@ -8,6 +8,7 @@ import { Funcionarios } from 'src/app/models/Funcionarios';
   templateUrl: './funcionario-form.component.html',
   styleUrls: ['./funcionario-form.component.css']
 })
+
 export class FuncionarioFormComponent implements OnInit {
   @Output() onSubmit = new EventEmitter<Funcionarios>();
   @Input() btnAcao!: string;
@@ -18,9 +19,7 @@ export class FuncionarioFormComponent implements OnInit {
 
   funcionarioForm!: FormGroup;
 
-  constructor(){
-
-  }
+  constructor() {}
 
   ngOnInit(): void {
 
@@ -30,11 +29,16 @@ export class FuncionarioFormComponent implements OnInit {
         rg: new FormControl(this.dadosFuncionario ? this.dadosFuncionario.rg : '' , [Validators.required]),
         departamentoId: new FormControl(this.dadosFuncionario ? this.dadosFuncionario.departamentoId : 0 , [Validators.required]),
       })
+
   }
 
   submit(){
     console.log(this.funcionarioForm.value)
-
     this.onSubmit.emit(this.funcionarioForm.value);
   }
+
+  voltar(): any {
+     window.history.go(-1);
+    }
+
 }

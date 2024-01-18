@@ -7,14 +7,13 @@ import { FuncionariosDepartamentoComponent } from './pages/funcionarios-departam
 import { CadastroFuncionarioComponent } from './pages/cadastro-funcionario/cadastro-funcionario.component';
 import { UploadFotoFuncionarioComponent } from './pages/upload-foto-funcionario/upload-foto-funcionario.component';
 import { EditarFuncionarioComponent } from './pages/editar-funcionario/editar-funcionario.component';
-import { DeletarDepartamentoComponent } from './pages/deletar-departamento/deletar-departamento.component';
 import { DeletarFuncionarioComponent } from './pages/deletar-funcionario/deletar-funcionario.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cadastro-departamento', component: CadastroDepartamentoComponent },
   { path: 'editar-departamento/:id', component: EditarDepartamentoComponent },
-  { path: 'deletar-departamento/:id', component: DeletarDepartamentoComponent},
+  // { path: 'deletar-departamento/:id', component: DeletarDepartamentoComponent},
   { path: 'funcionarios-departamento/:id', component: FuncionariosDepartamentoComponent },
   { path: 'cadastro-funcionario', component: CadastroFuncionarioComponent },
   { path: 'editar-funcionario/:id', component: EditarFuncionarioComponent },
@@ -26,4 +25,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

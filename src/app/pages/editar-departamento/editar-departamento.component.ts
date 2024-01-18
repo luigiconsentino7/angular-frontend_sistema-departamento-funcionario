@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Departamentos } from 'src/app/models/Departamentos';
 import { DepartamentoService } from 'src/app/services/departamento.service';
-import { DepartamentoFormComponent } from 'src/app/components/departamento-form/departamento-form.component';
 
 @Component({
   selector: 'app-editar-departamento',
   templateUrl: './editar-departamento.component.html',
   styleUrls: ['./editar-departamento.component.css']
 })
+
 export class EditarDepartamentoComponent implements OnInit {
 
   btnAcao: string = "Editar"
@@ -22,7 +22,6 @@ export class EditarDepartamentoComponent implements OnInit {
       console.log(id)
       this.departamentoService.GetDepartamentoId(id).subscribe((data)=> {
         this.departamento = data;
-
       })
   }
 
@@ -32,8 +31,5 @@ export class EditarDepartamentoComponent implements OnInit {
       this.router.navigate(['/'])
     });
   }
-
-
-
 
 }
