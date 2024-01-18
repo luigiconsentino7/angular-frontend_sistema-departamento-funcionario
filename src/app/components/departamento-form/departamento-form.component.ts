@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Departamentos } from 'src/app/models/Departamentos';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-departamento-form',
@@ -14,6 +15,7 @@ export class DepartamentoFormComponent implements OnInit {
   @Input() dadosDepartamento: Departamentos | null = null;
 
   departamentoForm!: FormGroup;
+  location: any;
 
   constructor(){
 

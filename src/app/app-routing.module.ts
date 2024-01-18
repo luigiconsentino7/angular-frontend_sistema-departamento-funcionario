@@ -4,12 +4,22 @@ import { HomeComponent } from './pages/home/home.component';
 import { CadastroDepartamentoComponent } from './pages/cadastro-departamento/cadastro-departamento.component';
 import { EditarDepartamentoComponent } from './pages/editar-departamento/editar-departamento.component';
 import { FuncionariosDepartamentoComponent } from './pages/funcionarios-departamento/funcionarios-departamento.component';
+import { CadastroFuncionarioComponent } from './pages/cadastro-funcionario/cadastro-funcionario.component';
+import { UploadFotoFuncionarioComponent } from './pages/upload-foto-funcionario/upload-foto-funcionario.component';
+import { EditarFuncionarioComponent } from './pages/editar-funcionario/editar-funcionario.component';
+import { DeletarDepartamentoComponent } from './pages/deletar-departamento/deletar-departamento.component';
+import { DeletarFuncionarioComponent } from './pages/deletar-funcionario/deletar-funcionario.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cadastro-departamento', component: CadastroDepartamentoComponent },
   { path: 'editar-departamento/:id', component: EditarDepartamentoComponent },
-  { path: 'funcionarios-departamento/:id', component: FuncionariosDepartamentoComponent }
+  { path: 'deletar-departamento/:id', component: DeletarDepartamentoComponent},
+  { path: 'funcionarios-departamento/:id', component: FuncionariosDepartamentoComponent },
+  { path: 'cadastro-funcionario', component: CadastroFuncionarioComponent },
+  { path: 'editar-funcionario/:id', component: EditarFuncionarioComponent },
+  { path: 'funcionarios-departamento/:id/deletar-funcionario/:id', component: DeletarFuncionarioComponent},
+  { path: 'upload-imagem-funcionario/:id', component: UploadFotoFuncionarioComponent}
 ];
 
 @NgModule({

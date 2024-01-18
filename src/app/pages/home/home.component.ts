@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Departamentos } from 'src/app/models/Departamentos';
 import { DepartamentoService } from 'src/app/services/departamento.service';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   departamentosList: Departamentos[] = [];
   departamentosListGeral: Departamentos[] = [];
 
-  constructor(private departamentoService: DepartamentoService) {}
+  constructor(private departamentoService: DepartamentoService, private route: ActivatedRoute, private router: Router) {}
 
   private handleResponse(data: any): void {
 
@@ -37,6 +37,13 @@ export class HomeComponent implements OnInit {
       return departamento.nome.toLowerCase().includes(value);
     })
   }
+
+  DisableDepartamento(id: number){
+    this.departamentoService.DisableDepartamento(id).subscribe((data) => {
+      this.router.navigate([''])
+    })
+  }
+
 
 
 }

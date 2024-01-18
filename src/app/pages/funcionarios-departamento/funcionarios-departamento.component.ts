@@ -10,7 +10,6 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
 })
 export class FuncionariosDepartamentoComponent implements OnInit{
 
-
   funcionariosList: Funcionarios[] = [];
   funcionariosListGeral: Funcionarios [] = [];
 
@@ -32,4 +31,21 @@ ngOnInit(): void {
     });
 
   }
+
+  search(event : Event){
+    const target = event.target as HTMLInputElement;
+    const value = target.value.toLowerCase();
+
+    this.funcionariosList = this.funcionariosListGeral.filter(funcionario => {
+      return funcionario.nome.toLowerCase().includes(value);
+    })
+  }
+
+  DisableFuncionario(id: number){
+    this.funcionarioService.DisableFuncionario(id).subscribe((data) => {
+      this.router.navigate([''])
+    })
+  }
+
+
 }

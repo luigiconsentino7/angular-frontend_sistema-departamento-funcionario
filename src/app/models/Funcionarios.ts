@@ -1,8 +1,8 @@
 export interface Funcionarios{
-  id? : number;
+  id : number;
   nome : string;
   sobrenome : string;
-  foto? : File;
+  foto? : string;
   rg : string;
   departamentoId : number;
   ativo : boolean;

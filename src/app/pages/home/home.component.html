@@ -42,7 +42,8 @@
       </td>
       <td>
         <button routerLink="/editar-departamento/{{departamento.id}}">Editar</button>
-        <button>Excluir</button>
+        <button (click)="DisableDepartamento(departamento.id)">Desativar</button>
+        <button routerLink="deletar-departamento/{{departamento.id}}">Excluir</button>
       </td>
 
     </tr>

@@ -1,5 +1,5 @@
 export interface Departamentos{
-  id? : number;
+  id : number;
   nome : string;
   sigla : string;
   ativo : boolean;

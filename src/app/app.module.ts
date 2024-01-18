@@ -13,6 +13,12 @@ import { CadastroDepartamentoComponent } from './pages/cadastro-departamento/cad
 import { DepartamentoFormComponent } from './components/departamento-form/departamento-form.component';
 import { EditarDepartamentoComponent } from './pages/editar-departamento/editar-departamento.component';
 import { FuncionariosDepartamentoComponent } from './pages/funcionarios-departamento/funcionarios-departamento.component';
+import { FuncionarioFormComponent } from './components/funcionario-form/funcionario-form.component';
+import { CadastroFuncionarioComponent } from './pages/cadastro-funcionario/cadastro-funcionario.component';
+import { UploadFotoFuncionarioComponent } from './pages/upload-foto-funcionario/upload-foto-funcionario.component';
+import { EditarFuncionarioComponent } from './pages/editar-funcionario/editar-funcionario.component';
+import { DeletarDepartamentoComponent } from './pages/deletar-departamento/deletar-departamento.component';
+import { DeletarFuncionarioComponent } from './pages/deletar-funcionario/deletar-funcionario.component';
 
 
 @NgModule({
@@ -22,7 +28,13 @@ import { FuncionariosDepartamentoComponent } from './pages/funcionarios-departam
     CadastroDepartamentoComponent,
     DepartamentoFormComponent,
     EditarDepartamentoComponent,
-    FuncionariosDepartamentoComponent
+    FuncionariosDepartamentoComponent,
+    FuncionarioFormComponent,
+    CadastroFuncionarioComponent,
+    UploadFotoFuncionarioComponent,
+    EditarFuncionarioComponent,
+    DeletarDepartamentoComponent,
+    DeletarFuncionarioComponent
 
   ],
   imports: [

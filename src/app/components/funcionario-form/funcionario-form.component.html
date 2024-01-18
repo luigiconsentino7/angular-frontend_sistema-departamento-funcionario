@@ -1,0 +1,29 @@
+<h1>{{btnTitulo}}</h1>
+
+<form [formGroup]="funcionarioForm" (ngSubmit)="submit()" #formDit="ngForm">
+  <div class="input-box">
+    <label for="">Nome</label>
+    <input type="text" formControlName="nome" placeholder="Insira o nome do funcionário" required>
+  </div>
+
+  <div class="input-box">
+    <label for="">Sobrenome</label>
+    <input type="text" formControlName="sobrenome" placeholder="Insira o sobrenome do funcionário" required>
+  </div>
+
+  <div class="input-box">
+    <label for="">RG</label>
+    <input type="text" formControlName="rg" placeholder="Insira o RG do funcionário" required>
+  </div>
+
+  <div class="input-box">
+    <label for="">ID Departamento</label>
+    <input type="text" formControlName="departamentoId" placeholder="Insira o ID do departamento" required>
+  </div>
+
+  <div class="btn-box">
+    <button type="submit" [disabled]="!funcionarioForm.valid">{{btnAcao}}</button>
+    <button routerLink="">Voltar para a tela inicial</button>
+  </div>
+
+</form>

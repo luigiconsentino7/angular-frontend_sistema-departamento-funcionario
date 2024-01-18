@@ -1,0 +1,15 @@
+<h1>Upload de Foto</h1>
+
+<div>
+  <input type="file" (change)="onFileSelected($event)">
+  <button (click)="onUpload()">Enviar Foto</button>
+
+  <div *ngIf="imageUrl">
+    <img [src]="imageUrl" alt="Foto do Funcionário">
+  </div>
+
+  <div class="btn-box">
+    <button routerLink="">Voltar</button>
+  </div>
+</div>
+

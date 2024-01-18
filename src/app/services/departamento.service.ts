@@ -13,6 +13,8 @@ export class DepartamentoService {
   private apiUrlDepartamentoPost = `${environment.ApiUrl}/departamentos/PostDepartamento`
   private apiUrlDepartamentoUpdate = `${environment.ApiUrl}/departamentos/UpdateDepartamento`
   private apiUrlDepartamentoGetId = `${environment.ApiUrl}/departamentos/GetDepartamentos`
+  private apiUrlDepartamentoDisable = `${environment.ApiUrl}/departamentos/DisableDepartamento`
+  private apiUrlDepartamentoDelete = `${environment.ApiUrl}/departamentos/DeleteDepartamento`
 
 
   constructor( private http: HttpClient ) { }
@@ -32,5 +34,14 @@ export class DepartamentoService {
   UpdateDepartamento(departamento: Departamentos, id : number) : Observable<Departamentos[]>{
     return this.http.put<Departamentos[]>(`${this.apiUrlDepartamentoUpdate} ${id}`, departamento);
   }
+
+  DisableDepartamento(id: number) : Observable<Departamentos[]>{
+    return this.http.delete<Departamentos[]>(`${this.apiUrlDepartamentoDisable} ${id}`);
+  }
+
+  DeleteDepartamento(departamento: Departamentos, id : number) : Observable<Departamentos[]>{
+    return this.http.delete<Departamentos[]>(`${this.apiUrlDepartamentoDelete}/${id}`);
+  }
+
 
 }
