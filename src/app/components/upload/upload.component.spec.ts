@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ExcluirComponent } from './excluir.component';
+import { UploadComponent } from './upload.component';
 
-describe('ExcluirComponent', () => {
-  let component: ExcluirComponent;
-  let fixture: ComponentFixture<ExcluirComponent>;
+describe('UploadComponent', () => {
+  let component: UploadComponent;
+  let fixture: ComponentFixture<UploadComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ExcluirComponent]
+      declarations: [UploadComponent]
     });
-    fixture = TestBed.createComponent(ExcluirComponent);
+    fixture = TestBed.createComponent(UploadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

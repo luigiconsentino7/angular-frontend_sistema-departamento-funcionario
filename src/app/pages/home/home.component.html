@@ -13,6 +13,10 @@
   </div>
 </div>
 
+<div class="title">
+  <h1>Departamentos</h1>
+</div>
+
 <table mat-table [dataSource]="departamentosList" class="mat-elevation-z8">
 
   <ng-container matColumnDef="Situacao">
@@ -31,23 +35,20 @@
   </ng-container>
 
   <ng-container matColumnDef="Id">
-    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <th mat-header-cell *matHeaderCellDef style="text-align: center;">ID</th>
     <td mat-cell *matCellDef="let departamento"> {{departamento.id}} </td>
   </ng-container>
 
-  <!-- Name Column -->
   <ng-container matColumnDef="Departamento">
     <th mat-header-cell *matHeaderCellDef>Departamento</th>
     <td mat-cell *matCellDef="let departamento"> {{departamento.nome}} </td>
   </ng-container>
 
-  <!-- Weight Column -->
   <ng-container matColumnDef="Sigla">
     <th mat-header-cell *matHeaderCellDef>Sigla</th>
     <td mat-cell *matCellDef="let departamento"> {{departamento.sigla}} </td>
   </ng-container>
 
-  <!-- Symbol Column -->
   <ng-container matColumnDef="Acessar">
     <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let departamento">
@@ -81,57 +82,8 @@
   <tr mat-row *matRowDef="let row; columns: columns;"></tr>
 </table>
 
+<div class="btn-cadastro">
+  <button routerLink="/cadastro-departamento" mat-raised-button color="primary">Cadastrar novo departamento</button>
+</div>
+
 </mat-card>
-
-
-
-<!-- <table class="table">
-
-  <thead>
-    <tr>
-      <th></th>
-      <th>ID</th>
-      <th>Departamento</th>
-      <th>Sigla</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody *ngFor="let departamento of departamentosList">
-    <tr>
-      <td>
-        <div *ngIf="departamento.ativo == true; else inativo">
-          <img src="assets/images/Ativo.png" alt="" style="height: 20px; width: 20px;">
-        </div>
-
-        <ng-template #inativo>
-          <img src="assets/images/Inativo.png" alt="" style="height: 20px; width: 20px;">
-        </ng-template>
-      </td>
-
-      <td> {{departamento.id}} </td>
-      <td> {{departamento.nome}} </td>
-      <td> {{departamento.sigla}} </td>
-      <td>
-        <button routerLink="funcionarios-departamento/{{departamento.id}}">Acessar departamento</button>
-      </td>
-      <td>
-        <button routerLink="/editar-departamento/{{departamento.id}}">Editar</button>
-      </td>
-      <td>
-        <button (click)="DisableDepartamento(departamento.id)">Desativar</button>
-        <button (click)="EnableDepartamento(departamento, departamento.id)">Ativar</button>
-      </td>
-      <td>
-        <button routerLink="deletar-departamento/{{departamento.id}}">Excluir</button>
-      </td>
-
-    </tr>
-  </tbody>
-</table> -->
-
-  <div class="btn-cadastro">
-    <button routerLink="/cadastro-departamento" mat-raised-button color="primary">Cadastrar novo departamento</button>
-  </div>

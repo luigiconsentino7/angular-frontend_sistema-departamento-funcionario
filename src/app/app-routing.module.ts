@@ -7,7 +7,6 @@ import { FuncionariosDepartamentoComponent } from './pages/funcionarios-departam
 import { CadastroFuncionarioComponent } from './pages/cadastro-funcionario/cadastro-funcionario.component';
 import { UploadFotoFuncionarioComponent } from './pages/upload-foto-funcionario/upload-foto-funcionario.component';
 import { EditarFuncionarioComponent } from './pages/editar-funcionario/editar-funcionario.component';
-import { DeletarFuncionarioComponent } from './pages/deletar-funcionario/deletar-funcionario.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,7 +16,6 @@ const routes: Routes = [
   { path: 'funcionarios-departamento/:id', component: FuncionariosDepartamentoComponent },
   { path: 'cadastro-funcionario', component: CadastroFuncionarioComponent },
   { path: 'editar-funcionario/:id', component: EditarFuncionarioComponent },
-  { path: 'funcionarios-departamento/:id/deletar-funcionario/:id', component: DeletarFuncionarioComponent},
   { path: 'upload-imagem-funcionario/:id', component: UploadFotoFuncionarioComponent}
 ];
 

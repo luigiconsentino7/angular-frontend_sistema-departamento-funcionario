@@ -13,7 +13,7 @@ export class EditarFuncionarioComponent {
 
   funcionario!: Funcionarios;
   btnAcao: string = "Editar"
-  btnTitulo: string = "Editar Funcionario"
+  btnTitulo: string = "Editar Funcionário"
 
 
   constructor(private funcionarioService : FuncionarioService, private route: ActivatedRoute, private router: Router){}

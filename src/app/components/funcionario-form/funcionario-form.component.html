@@ -1,30 +1,65 @@
+<mat-card>
+
 <h1>{{btnTitulo}}</h1>
 
 <form [formGroup]="funcionarioForm" (ngSubmit)="submit()" #formDit="ngForm">
 
+<div class="funcionario-box">
   <div class="input-box">
-    <label for="">Nome</label>
-    <input type="text" formControlName="nome" placeholder="Insira o nome do funcionário" required>
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input matInput type="text" formControlName="nome" placeholder="Insira o nome do funcionário" required>
+    </mat-form-field>
+  </div>
+</div>
+
+  <div class="input-box">
+    <mat-form-field>
+      <mat-label>Sobrenome</mat-label>
+      <input matInput type="text" formControlName="sobrenome" placeholder="Insira o sobrenome do funcionário" required>
+    </mat-form-field>
   </div>
 
   <div class="input-box">
-    <label for="">Sobrenome</label>
-    <input type="text" formControlName="sobrenome" placeholder="Insira o sobrenome do funcionário" required>
+    <mat-form-field>
+      <mat-label>RG</mat-label>
+      <input matInput type="text" formControlName="rg" placeholder="Insira o RG do funcionário" required>
+    </mat-form-field>
   </div>
 
   <div class="input-box">
-    <label for="">RG</label>
-    <input type="text" formControlName="rg" placeholder="Insira o RG do funcionário" required>
-  </div>
-
-  <div class="input-box">
-    <label for="">ID Departamento</label>
-    <input type="text" formControlName="departamentoId" placeholder="Insira o ID do departamento" required>
+    <mat-form-field>
+      <mat-label>ID Departamento</mat-label>
+      <input matInput type="text" formControlName="departamentoId" placeholder="Insira o ID do departamento" required>
+    </mat-form-field>
   </div>
 
   <div class="btn-box">
-    <button type="submit" [disabled]="!funcionarioForm.valid">{{btnAcao}}</button>
-    <button (click)="voltar()">Voltar</button>
+    <button type="submit" [disabled]="!funcionarioForm.valid" mat-raised-button color="accent">{{btnAcao}}</button>
+    <button (click)="voltar()" mat-raised-button>Voltar</button>
   </div>
 
 </form>
+
+</mat-card>
+
+
+
+<!-- <div class="input-box">
+  <mat-form-field>
+    <mat-label for="">Nome:</mat-label>
+    <input matInput type="text" formControlName="nome" placeholder="Insira o nome do departamento" required>
+  </mat-form-field>
+</div>
+
+<div class="input-box">
+  <mat-form-field>
+    <mat-label for="">Sigla:</mat-label>
+    <input matInput type="text" formControlName="sigla" placeholder="Insira a sigla do departamento" required>
+  </mat-form-field>
+</div>
+
+<div class="btn-box">
+  <button type="submit" [disabled]="!departamentoForm.valid" mat-raised-button color="accent">{{btnAcao}}</button>
+  <button routerLink="" mat-raised-button>Voltar</button>
+</div> -->

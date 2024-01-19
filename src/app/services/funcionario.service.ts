@@ -52,7 +52,7 @@ export class FuncionarioService {
     return this.http.post<Funcionarios[]>(`${this.apiUrlFuncionarioEnable} ${id}`, funcionario);
   }
 
-  DeleteFuncionario(funcionario: Funcionarios, id : number) : Observable<Funcionarios[]>{
+  DeleteFuncionario(id : number) : Observable<Funcionarios[]>{
     return this.http.delete<Funcionarios[]>(`${this.apiUrlFuncionarioDelete} ${id}`);
   }
 

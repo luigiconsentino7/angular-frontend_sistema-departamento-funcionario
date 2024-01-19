@@ -6,10 +6,10 @@ import { DepartamentoService } from 'src/app/services/departamento.service';
 
 @Component({
   selector: 'app-excluir',
-  templateUrl: './excluir.component.html',
-  styleUrls: ['./excluir.component.css']
+  templateUrl: './excluir-departamento.component.html',
+  styleUrls: ['./excluir-departamento.component.css']
 })
-export class ExcluirComponent implements OnInit{
+export class ExcluirDepartamentoComponent implements OnInit{
 
   inputData: any;
   departamento!: Departamentos
@@ -18,7 +18,7 @@ export class ExcluirComponent implements OnInit{
     private departamentoService : DepartamentoService,
     private router : Router,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private ref: MatDialogRef<ExcluirComponent>
+    private ref: MatDialogRef<ExcluirDepartamentoComponent>
   ) {}
 
   ngOnInit(): void {

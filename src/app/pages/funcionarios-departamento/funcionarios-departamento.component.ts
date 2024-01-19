@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ExcluirFuncionarioComponent } from 'src/app/components/excluir-funcionario/excluir-funcionario.component';
 import { Funcionarios } from 'src/app/models/Funcionarios';
+import { MatDialog } from '@angular/material/dialog';
 import { FuncionarioService } from 'src/app/services/funcionario.service';
+import { UploadComponent } from 'src/app/components/upload/upload.component';
 
 @Component({
   selector: 'app-funcionarios-departamento',
@@ -15,13 +18,15 @@ export class FuncionariosDepartamentoComponent implements OnInit{
   funcionariosListGeral: Funcionarios [] = [];
   funcionario!: Funcionarios;
 
-  constructor( private funcionarioService : FuncionarioService, private route: ActivatedRoute, private router: Router){}
+  constructor( private funcionarioService : FuncionarioService, private route: ActivatedRoute, private router: Router, public dialog: MatDialog){}
 
   private handleResponse(data: any): void {
     this.funcionariosList = data.funcionarios.$values;
     this.funcionariosListGeral = data.funcionarios.$values;
     console.log('Funcionários do departamento:', this.funcionariosList);
   }
+
+  columns = ['Situacao', 'Foto', 'DepartamentoId', 'Id', 'Nome', 'Sobrenome', 'Rg', 'Editar', 'Upload', 'Acoes', 'Excluir']
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -37,6 +42,26 @@ export class FuncionariosDepartamentoComponent implements OnInit{
     this.funcionariosList = this.funcionariosListGeral.filter(funcionario => {
       return funcionario.nome.toLowerCase().includes(value);
     })
+  }
+
+  OpenDialog(id: number) {
+    this.dialog.open(ExcluirFuncionarioComponent, {
+      width: '450px',
+      height: '450px',
+      data: {
+        id: id
+      }
+    });
+  }
+
+  OpenDialogUpload(id: number) {
+    this.dialog.open(UploadComponent, {
+      width: '450px',
+      height: '350px',
+      data: {
+        id: id
+      }
+    });
   }
 
   DisableFuncionario(id: number){

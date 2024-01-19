@@ -3,7 +3,7 @@ import { Departamentos } from 'src/app/models/Departamentos';
 import { DepartamentoService } from 'src/app/services/departamento.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { ExcluirComponent } from 'src/app/components/excluir/excluir.component';
+import { ExcluirDepartamentoComponent } from 'src/app/components/excluir-departamento/excluir-departamento.component';
 
 @Component({
   selector: 'app-home',
@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
   }
 
   OpenDialog(id: number) {
-    this.dialog.open(ExcluirComponent, {
+    this.dialog.open(ExcluirDepartamentoComponent, {
       width: '450px',
       height: '450px',
       data: {
