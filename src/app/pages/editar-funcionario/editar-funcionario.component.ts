@@ -26,7 +26,7 @@ export class EditarFuncionarioComponent {
       })
   }
 
-  editarFuncionario(funcionario: Funcionarios) {
+  editFuncionario(funcionario: Funcionarios) {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.funcionarioService.UpdateFuncionario(funcionario, id).subscribe((data) => {
       this.router.navigate([`/funcionarios-departamento/${funcionario.departamentoId}`])

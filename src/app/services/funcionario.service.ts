@@ -56,7 +56,7 @@ export class FuncionarioService {
     return this.http.delete<Funcionarios[]>(`${this.apiUrlFuncionarioDelete} ${id}`);
   }
 
-  UploadImagem(file: File, id : number): Observable<any> {
+  UploadImage(file: File, id : number): Observable<any> {
     const formData: FormData = new FormData();
     formData.append('file', file);
 

@@ -1,6 +1,6 @@
 <mat-card>
 
-  <div class="details">
+  <div class="details-box">
     <h1>Deseja confirmar a exclusão?</h1>
     <div>
       <h2>ID:</h2>
@@ -11,9 +11,9 @@
       <p>{{departamento.sigla}}</p>
     </div>
 
-    <div class="btn-box-excluir">
+    <div class="btn-box-delete">
       <button mat-raised-button color="warn" (click)="Delete()">Confirmar exclusão</button>
-      <button mat-raised-button (click)="Cancelar()">Voltar</button>
+      <button mat-raised-button (click)="Return()">Voltar</button>
     </div>
   </div>
 

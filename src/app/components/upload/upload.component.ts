@@ -39,7 +39,7 @@ export class UploadComponent {
 
   onUpload() {
     if (this.selectedFile) {
-      this.funcionarioService.UploadImagem(this.selectedFile, this.inputData.id).subscribe({
+      this.funcionarioService.UploadImage(this.selectedFile, this.inputData.id).subscribe({
         next: (response) => {
           this.ref.close();
           window.location.reload()
@@ -53,7 +53,7 @@ export class UploadComponent {
     }
   }
 
-  Cancelar(){
+  Return(){
     this.ref.close();
   }
 }

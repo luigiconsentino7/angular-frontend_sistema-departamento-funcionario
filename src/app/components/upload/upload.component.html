@@ -1,8 +1,8 @@
 <mat-card>
 
-  <div class="details">
+  <div class="details-box">
     <h1>Upload de foto</h1>
-    <div class="file">
+    <div class="file-box">
       <input type="file" (change)="onFileSelected($event)">
     </div>
     <div *ngIf="imageUrl">
@@ -11,7 +11,7 @@
 
     <div class="btn-box-upload">
       <button (click)="onUpload()" mat-raised-button color="accent">Enviar Foto</button>
-      <button (click)="Cancelar()" mat-raised-button>Voltar</button>
+      <button (click)="Return()" mat-raised-button>Voltar</button>
     </div>
   </div>
 

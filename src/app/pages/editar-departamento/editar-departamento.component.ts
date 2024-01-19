@@ -25,7 +25,7 @@ export class EditarDepartamentoComponent implements OnInit {
       })
   }
 
-  editarDepartamento(departamento: Departamentos) {
+  editDepartamento(departamento: Departamentos) {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.departamentoService.UpdateDepartamento(departamento, id).subscribe((data) => {
       this.router.navigate(['/'])

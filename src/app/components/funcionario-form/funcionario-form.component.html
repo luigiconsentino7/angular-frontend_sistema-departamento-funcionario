@@ -4,14 +4,12 @@
 
 <form [formGroup]="funcionarioForm" (ngSubmit)="submit()" #formDit="ngForm">
 
-<div class="funcionario-box">
   <div class="input-box">
     <mat-form-field>
       <mat-label>Nome</mat-label>
       <input matInput type="text" formControlName="nome" placeholder="Insira o nome do funcionário" required>
     </mat-form-field>
   </div>
-</div>
 
   <div class="input-box">
     <mat-form-field>
@@ -36,30 +34,9 @@
 
   <div class="btn-box">
     <button type="submit" [disabled]="!funcionarioForm.valid" mat-raised-button color="accent">{{btnAcao}}</button>
-    <button (click)="voltar()" mat-raised-button>Voltar</button>
+    <button (click)="Return()" mat-raised-button>Voltar</button>
   </div>
 
 </form>
 
 </mat-card>
-
-
-
-<!-- <div class="input-box">
-  <mat-form-field>
-    <mat-label for="">Nome:</mat-label>
-    <input matInput type="text" formControlName="nome" placeholder="Insira o nome do departamento" required>
-  </mat-form-field>
-</div>
-
-<div class="input-box">
-  <mat-form-field>
-    <mat-label for="">Sigla:</mat-label>
-    <input matInput type="text" formControlName="sigla" placeholder="Insira a sigla do departamento" required>
-  </mat-form-field>
-</div>
-
-<div class="btn-box">
-  <button type="submit" [disabled]="!departamentoForm.valid" mat-raised-button color="accent">{{btnAcao}}</button>
-  <button routerLink="" mat-raised-button>Voltar</button>
-</div> -->

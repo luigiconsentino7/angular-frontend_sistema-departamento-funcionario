@@ -5,11 +5,11 @@ import { Funcionarios } from 'src/app/models/Funcionarios';
 import { FuncionarioService } from 'src/app/services/funcionario.service';
 
 @Component({
-  selector: 'app-excluir-funcionario',
-  templateUrl: './excluir-funcionario.component.html',
-  styleUrls: ['./excluir-funcionario.component.css']
+  selector: 'app-situacao-funcionario',
+  templateUrl: './situacao-funcionario.component.html',
+  styleUrls: ['./situacao-funcionario.component.css']
 })
-export class ExcluirFuncionarioComponent {
+export class SituacaoFuncionarioComponent {
 
   inputData: any;
   funcionario!: Funcionarios
@@ -18,7 +18,7 @@ export class ExcluirFuncionarioComponent {
     private funcionarioService : FuncionarioService,
     private router : Router,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private ref: MatDialogRef<ExcluirFuncionarioComponent>
+    private ref: MatDialogRef<SituacaoFuncionarioComponent>
   ) {}
 
   ngOnInit(): void {
@@ -31,10 +31,15 @@ export class ExcluirFuncionarioComponent {
     });
   }
 
-  Delete(){
-    this.funcionarioService.DeleteFuncionario(this.inputData.id).subscribe((data) => {
-      this.ref.close();
-      window.location.reload()
+  DisableFuncionario(){
+    this.funcionarioService.DisableFuncionario(this.inputData.id).subscribe((data) => {
+      location.reload()
+    })
+  }
+
+  EnableFuncionario(){
+    this.funcionarioService.EnableFuncionario(this.funcionario ,this.inputData.id).subscribe((data) => {
+      location.reload()
     })
   }
 

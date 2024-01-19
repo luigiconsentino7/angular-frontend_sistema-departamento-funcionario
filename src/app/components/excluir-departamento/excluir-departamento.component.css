@@ -9,11 +9,11 @@ mat-card{
   margin-top: 50px;
 }
 
-.details h1{
+.details-box h1{
   text-align: center;
 }
 
-.btn-box-excluir button{
+.btn-box-delete button{
   margin-top: 10px;
   margin-right: 5px;
 }

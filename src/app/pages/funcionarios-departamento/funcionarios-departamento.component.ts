@@ -5,6 +5,7 @@ import { Funcionarios } from 'src/app/models/Funcionarios';
 import { MatDialog } from '@angular/material/dialog';
 import { FuncionarioService } from 'src/app/services/funcionario.service';
 import { UploadComponent } from 'src/app/components/upload/upload.component';
+import { SituacaoFuncionarioComponent } from 'src/app/components/situacao-funcionario/situacao-funcionario.component';
 
 @Component({
   selector: 'app-funcionarios-departamento',
@@ -56,6 +57,16 @@ export class FuncionariosDepartamentoComponent implements OnInit{
 
   OpenDialogUpload(id: number) {
     this.dialog.open(UploadComponent, {
+      width: '450px',
+      height: '350px',
+      data: {
+        id: id
+      }
+    });
+  }
+
+  OpenDialogSituacao(id: number) {
+    this.dialog.open(SituacaoFuncionarioComponent, {
       width: '450px',
       height: '350px',
       data: {

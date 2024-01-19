@@ -38,7 +38,7 @@ export class ExcluirDepartamentoComponent implements OnInit{
     })
   }
 
-  Cancelar(){
+  Return(){
     this.ref.close();
   }
 

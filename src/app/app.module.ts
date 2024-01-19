@@ -15,7 +15,6 @@ import { EditarDepartamentoComponent } from './pages/editar-departamento/editar-
 import { FuncionariosDepartamentoComponent } from './pages/funcionarios-departamento/funcionarios-departamento.component';
 import { FuncionarioFormComponent } from './components/funcionario-form/funcionario-form.component';
 import { CadastroFuncionarioComponent } from './pages/cadastro-funcionario/cadastro-funcionario.component';
-import { UploadFotoFuncionarioComponent } from './pages/upload-foto-funcionario/upload-foto-funcionario.component';
 import { EditarFuncionarioComponent } from './pages/editar-funcionario/editar-funcionario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -28,6 +27,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ExcluirDepartamentoComponent } from './components/excluir-departamento/excluir-departamento.component';
 import { ExcluirFuncionarioComponent } from './components/excluir-funcionario/excluir-funcionario.component';
 import { UploadComponent } from './components/upload/upload.component';
+import { SituacaoFuncionarioComponent } from './components/situacao-funcionario/situacao-funcionario.component';
+import { SituacaoDepartamentoComponent } from './components/situacao-departamento/situacao-departamento.component';
 
 
 @NgModule({
@@ -40,11 +41,12 @@ import { UploadComponent } from './components/upload/upload.component';
     FuncionariosDepartamentoComponent,
     FuncionarioFormComponent,
     CadastroFuncionarioComponent,
-    UploadFotoFuncionarioComponent,
     EditarFuncionarioComponent,
     ExcluirDepartamentoComponent,
     ExcluirFuncionarioComponent,
-    UploadComponent
+    UploadComponent,
+    SituacaoFuncionarioComponent,
+    SituacaoDepartamentoComponent
 
   ],
   imports: [

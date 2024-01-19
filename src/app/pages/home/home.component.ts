@@ -4,6 +4,7 @@ import { DepartamentoService } from 'src/app/services/departamento.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ExcluirDepartamentoComponent } from 'src/app/components/excluir-departamento/excluir-departamento.component';
+import { SituacaoDepartamentoComponent } from 'src/app/components/situacao-departamento/situacao-departamento.component';
 
 @Component({
   selector: 'app-home',
@@ -44,6 +45,16 @@ export class HomeComponent implements OnInit {
     this.dialog.open(ExcluirDepartamentoComponent, {
       width: '450px',
       height: '450px',
+      data: {
+        id: id
+      }
+    });
+  }
+
+  OpenDialogSituacao(id: number) {
+    this.dialog.open(SituacaoDepartamentoComponent, {
+      width: '450px',
+      height: '350px',
       data: {
         id: id
       }
