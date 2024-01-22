@@ -42,7 +42,6 @@ export class HomeComponent implements OnInit {
   }
 
   OpenDialog(id: number) {
-    console.log(2)
     this.dialog.open(ExcluirDepartamentoComponent, {
       width: '450px',
       height: '450px',
