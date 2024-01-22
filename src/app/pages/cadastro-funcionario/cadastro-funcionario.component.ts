@@ -18,7 +18,7 @@ export class CadastroFuncionarioComponent {
 
   createFuncionario(funcionario: Funcionarios){
     this.funcionarioService.CreateFuncionario(funcionario).subscribe((data) => {
-      window.history.go(-1)
+      this.router.navigate([`/funcionarios-departamento/${funcionario.departamentoId}`])
     });
   }
 

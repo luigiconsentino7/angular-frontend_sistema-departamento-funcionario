@@ -4,17 +4,20 @@
     <img src="assets/images/logoevo.png" alt="">
   </div>
 
-  <div class="search-box">
+  <div class="navigation-box">
+
     <div class="input-box">
       <mat-form-field>
-        <mat-label>Buscar funcionário</mat-label>
+        <mat-label>Buscar funcionário:</mat-label>
         <input matInput type="text" placeholder="Digite aqui" (input)="search($event)">
       </mat-form-field>
     </div>
-  </div>
 
-  <div class="title-box">
-    <h1>Lista de funcionários do departamento</h1>
+    <div class="btn-box">
+      <button routerLink="/cadastro-funcionario" mat-raised-button color="primary">Cadastrar novo funcionário</button>
+      <button (click)="Return()" mat-raised-button>Voltar</button>
+    </div>
+
   </div>
 
   <table mat-table [dataSource]="funcionariosList" class="mat-elevation-z8">
@@ -36,32 +39,32 @@
 
     <ng-container matColumnDef="Foto">
       <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let funcionario"> <img [src]="funcionario.foto" alt="Foto do Funcionário" style="height: 70px; width: 70px; margin-top: 7px; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);"> </td>
+      <td mat-cell *matCellDef="let funcionario"> <img [src]="funcionario.foto" alt="Foto" class="image-box"> </td>
     </ng-container>
 
     <ng-container matColumnDef="DepartamentoId">
-      <th  mat-header-cell *matHeaderCellDef>Departamento</th>
-      <td mat-cell *matCellDef="let funcionario" style="text-align: center;"> {{funcionario.departamentoId}} </td>
+      <th  mat-header-cell *matHeaderCellDef>ID Departamento</th>
+      <td mat-cell *matCellDef="let funcionario" class="content-box"> {{funcionario.departamentoId}} </td>
     </ng-container>
 
     <ng-container matColumnDef="Id">
-      <th mat-header-cell *matHeaderCellDef>ID</th>
-      <td mat-cell *matCellDef="let funcionario"> {{funcionario.id}} </td>
+      <th mat-header-cell *matHeaderCellDef>ID Funcionário</th>
+      <td mat-cell *matCellDef="let funcionario" class="content-box"> {{funcionario.id}} </td>
     </ng-container>
 
     <ng-container matColumnDef="Nome">
       <th mat-header-cell *matHeaderCellDef>Nome</th>
-      <td mat-cell *matCellDef="let funcionario"> {{funcionario.nome}} </td>
+      <td mat-cell *matCellDef="let funcionario" class="content-box"> {{funcionario.nome}} </td>
     </ng-container>
 
     <ng-container matColumnDef="Sobrenome">
       <th mat-header-cell *matHeaderCellDef>Sobrenome</th>
-      <td mat-cell *matCellDef="let funcionario"> {{funcionario.sobrenome}} </td>
+      <td mat-cell *matCellDef="let funcionario" class="content-box"> {{funcionario.sobrenome}} </td>
     </ng-container>
 
     <ng-container matColumnDef="Rg">
       <th mat-header-cell *matHeaderCellDef>RG</th>
-      <td mat-cell *matCellDef="let funcionario"> {{funcionario.rg}} </td>
+      <td mat-cell *matCellDef="let funcionario" class="content-box"> {{funcionario.rg}} </td>
     </ng-container>
 
     <ng-container matColumnDef="Editar">
@@ -95,10 +98,5 @@
     <tr mat-header-row *matHeaderRowDef="columns"></tr>
     <tr mat-row *matRowDef="let row; columns: columns;"></tr>
   </table>
-
-  <div class="btn-box">
-    <button routerLink="/cadastro-funcionario" mat-raised-button color="primary">Cadastrar novo funcionário</button>
-    <button routerLink="" mat-raised-button>Voltar</button>
-  </div>
 
   </mat-card>

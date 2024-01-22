@@ -10,26 +10,19 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent {
+
   inputData: any;
   funcionario!: Funcionarios
   imageUrl!: string;
   selectedFile!: File;
 
-  constructor(
-    private funcionarioService : FuncionarioService,
-    private router : Router,
-    private route: ActivatedRoute,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-    private ref: MatDialogRef<UploadComponent>
-  ) {}
+  constructor( private funcionarioService : FuncionarioService, private router : Router, private route: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public data: any, private ref: MatDialogRef<UploadComponent> ) {}
 
   ngOnInit(): void {
     this.inputData = this.data
 
     this.funcionarioService.GetFuncionarioId(this.inputData.id).subscribe((data) => {
       this.funcionario = data;
-
-      console.log(this.funcionario)
     });
   }
 
@@ -42,7 +35,7 @@ export class UploadComponent {
       this.funcionarioService.UploadImage(this.selectedFile, this.inputData.id).subscribe({
         next: (response) => {
           this.ref.close();
-          window.location.reload()
+          window.location.reload();
         },
         error: (error) => {
           console.error('Erro no upload:', error);
@@ -56,4 +49,5 @@ export class UploadComponent {
   Return(){
     this.ref.close();
   }
+
 }

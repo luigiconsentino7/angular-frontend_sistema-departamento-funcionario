@@ -20,10 +20,9 @@ export class EditarFuncionarioComponent {
 
   ngOnInit(): void {
       const id = Number(this.route.snapshot.paramMap.get('id'));
-      console.log(id)
       this.funcionarioService.GetFuncionarioId(id).subscribe((data)=> {
         this.funcionario = data;
-      })
+      });
   }
 
   editFuncionario(funcionario: Funcionarios) {

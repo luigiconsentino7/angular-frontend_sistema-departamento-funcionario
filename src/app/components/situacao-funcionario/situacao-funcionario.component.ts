@@ -14,33 +14,26 @@ export class SituacaoFuncionarioComponent {
   inputData: any;
   funcionario!: Funcionarios
 
-  constructor(
-    private funcionarioService : FuncionarioService,
-    private router : Router,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-    private ref: MatDialogRef<SituacaoFuncionarioComponent>
-  ) {}
+  constructor( private funcionarioService : FuncionarioService, private router : Router, @Inject(MAT_DIALOG_DATA) public data: any, private ref: MatDialogRef<SituacaoFuncionarioComponent> ) {}
 
   ngOnInit(): void {
     this.inputData = this.data
 
     this.funcionarioService.GetFuncionarioId(this.inputData.id).subscribe((data) => {
       this.funcionario = data;
-
-      console.log(this.funcionario)
     });
   }
 
   DisableFuncionario(){
     this.funcionarioService.DisableFuncionario(this.inputData.id).subscribe((data) => {
       location.reload()
-    })
+    });
   }
 
   EnableFuncionario(){
     this.funcionarioService.EnableFuncionario(this.funcionario ,this.inputData.id).subscribe((data) => {
       location.reload()
-    })
+    });
   }
 
   Return(){

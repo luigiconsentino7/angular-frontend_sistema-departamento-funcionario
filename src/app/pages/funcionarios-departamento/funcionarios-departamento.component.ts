@@ -42,7 +42,7 @@ export class FuncionariosDepartamentoComponent implements OnInit{
     const value = target.value.toLowerCase();
     this.funcionariosList = this.funcionariosListGeral.filter(funcionario => {
       return funcionario.nome.toLowerCase().includes(value);
-    })
+    });
   }
 
   OpenDialog(id: number) {
@@ -78,13 +78,17 @@ export class FuncionariosDepartamentoComponent implements OnInit{
   DisableFuncionario(id: number){
     this.funcionarioService.DisableFuncionario(id).subscribe((data) => {
       location.reload()
-    })
+    });
   }
 
   EnableFuncionario(funcionario: Funcionarios, id: number){
     this.funcionarioService.EnableFuncionario(funcionario, id).subscribe((data) => {
       location.reload()
-    })
+    });
   }
+
+  Return(): any {
+    this.router.navigate(['/']);
+   }
 
 }

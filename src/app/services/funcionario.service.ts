@@ -10,10 +10,8 @@ import { Observable } from 'rxjs';
 
 export class FuncionarioService {
 
-  imageUrl!: string;
-
   private apiUrlFuncionarioGetAll = `${environment.ApiUrl}/funcionarios/GetAllFuncionarios`
-  private apiUrlFuncionariosDepartamentoGetId = `${environment.ApiUrl}/departamentos/GetDepartamentos`
+  private apiUrlFuncionariosDepartamentoGetId = `${environment.ApiUrl}/departamentos/GetDepartamento`
   private apiUrlFuncionarioGetId = `${environment.ApiUrl}/funcionarios/GetFuncionario`
   private apiUrlFuncionarioPost = `${environment.ApiUrl}/funcionarios/PostFuncionario`
   private apiUrlFuncionarioUpdate = `${environment.ApiUrl}/funcionarios/UpdateFuncionario`
@@ -29,11 +27,11 @@ export class FuncionarioService {
   }
 
   GetFuncionariosDepartamentoId(id: number): Observable<Funcionarios> {
-    return this.http.get<Funcionarios>(`${this.apiUrlFuncionariosDepartamentoGetId} ${id}`);
+    return this.http.get<Funcionarios>(`${this.apiUrlFuncionariosDepartamentoGetId}/${id}`);
   }
 
   GetFuncionarioId(id: number): Observable<Funcionarios> {
-    return this.http.get<Funcionarios>(`${this.apiUrlFuncionarioGetId} ${id}`);
+    return this.http.get<Funcionarios>(`${this.apiUrlFuncionarioGetId}/${id}`);
   }
 
   CreateFuncionario(funcionario: Funcionarios) : Observable<Funcionarios[]> {
@@ -41,19 +39,19 @@ export class FuncionarioService {
   }
 
   UpdateFuncionario(funcionario: Funcionarios, id : number) : Observable<Funcionarios[]>{
-    return this.http.put<Funcionarios[]>(`${this.apiUrlFuncionarioUpdate} ${id}`, funcionario);
+    return this.http.put<Funcionarios[]>(`${this.apiUrlFuncionarioUpdate}/${id}`, funcionario);
   }
 
   DisableFuncionario(id: number) : Observable<Funcionarios[]>{
-    return this.http.delete<Funcionarios[]>(`${this.apiUrlFuncionarioDisable} ${id}`);
+    return this.http.delete<Funcionarios[]>(`${this.apiUrlFuncionarioDisable}/${id}`);
   }
 
   EnableFuncionario(funcionario: Funcionarios, id: number) : Observable<Funcionarios[]>{
-    return this.http.post<Funcionarios[]>(`${this.apiUrlFuncionarioEnable} ${id}`, funcionario);
+    return this.http.post<Funcionarios[]>(`${this.apiUrlFuncionarioEnable}/${id}`, funcionario);
   }
 
   DeleteFuncionario(id : number) : Observable<Funcionarios[]>{
-    return this.http.delete<Funcionarios[]>(`${this.apiUrlFuncionarioDelete} ${id}`);
+    return this.http.delete<Funcionarios[]>(`${this.apiUrlFuncionarioDelete}/${id}`);
   }
 
   UploadImage(file: File, id : number): Observable<any> {

@@ -19,10 +19,9 @@ export class EditarDepartamentoComponent implements OnInit {
 
   ngOnInit(): void {
       const id = Number(this.route.snapshot.paramMap.get('id'));
-      console.log(id)
       this.departamentoService.GetDepartamentoId(id).subscribe((data)=> {
         this.departamento = data;
-      })
+      });
   }
 
   editDepartamento(departamento: Departamentos) {

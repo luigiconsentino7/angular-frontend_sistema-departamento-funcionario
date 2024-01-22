@@ -9,17 +9,14 @@ import { DepartamentoService } from 'src/app/services/departamento.service';
   templateUrl: './excluir-departamento.component.html',
   styleUrls: ['./excluir-departamento.component.css']
 })
+
 export class ExcluirDepartamentoComponent implements OnInit{
 
   inputData: any;
   departamento!: Departamentos
 
   constructor(
-    private departamentoService : DepartamentoService,
-    private router : Router,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-    private ref: MatDialogRef<ExcluirDepartamentoComponent>
-  ) {}
+    private departamentoService : DepartamentoService, private router : Router, @Inject(MAT_DIALOG_DATA) public data: any, private ref: MatDialogRef<ExcluirDepartamentoComponent>) {}
 
   ngOnInit(): void {
     this.inputData = this.data
@@ -35,7 +32,7 @@ export class ExcluirDepartamentoComponent implements OnInit{
     this.departamentoService.DeleteDepartamento(this.inputData.id).subscribe((data) => {
       this.ref.close();
       window.location.reload()
-    })
+    });
   }
 
   Return(){

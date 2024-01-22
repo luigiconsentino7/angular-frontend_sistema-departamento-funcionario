@@ -14,12 +14,7 @@ export class ExcluirFuncionarioComponent {
   inputData: any;
   funcionario!: Funcionarios
 
-  constructor(
-    private funcionarioService : FuncionarioService,
-    private router : Router,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-    private ref: MatDialogRef<ExcluirFuncionarioComponent>
-  ) {}
+  constructor( private funcionarioService : FuncionarioService, private router : Router, @Inject(MAT_DIALOG_DATA) public data: any, private ref: MatDialogRef<ExcluirFuncionarioComponent>) {}
 
   ngOnInit(): void {
     this.inputData = this.data
@@ -35,7 +30,7 @@ export class ExcluirFuncionarioComponent {
     this.funcionarioService.DeleteFuncionario(this.inputData.id).subscribe((data) => {
       this.ref.close();
       window.location.reload()
-    })
+    });
   }
 
   Return(){

@@ -20,7 +20,7 @@
 
   <div class="btn-box">
     <button type="submit" [disabled]="!departamentoForm.valid" mat-raised-button color="accent">{{btnAcao}}</button>
-    <button routerLink="" mat-raised-button>Voltar</button>
+    <button (click)="Return()" mat-raised-button>Voltar</button>
   </div>
 
 </form>

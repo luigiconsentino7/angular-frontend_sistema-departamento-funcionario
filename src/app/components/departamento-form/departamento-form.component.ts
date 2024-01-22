@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Departamentos } from 'src/app/models/Departamentos';
 
 @Component({
@@ -9,6 +10,7 @@ import { Departamentos } from 'src/app/models/Departamentos';
 })
 
 export class DepartamentoFormComponent implements OnInit {
+
   @Output() onSubmit = new EventEmitter<Departamentos>();
   @Input() btnAcao!: string;
   @Input() btnTitulo!: string;
@@ -16,20 +18,22 @@ export class DepartamentoFormComponent implements OnInit {
 
   departamentoForm!: FormGroup;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-
       this.departamentoForm = new FormGroup({
         nome: new FormControl(this.dadosDepartamento ? this.dadosDepartamento.nome : '', [Validators.required]),
         sigla: new FormControl(this.dadosDepartamento ? this.dadosDepartamento.sigla : '' , [Validators.required])
-      })
-
+      });
   }
 
   submit(){
     console.log(this.departamentoForm.value)
     this.onSubmit.emit(this.departamentoForm.value);
   }
+
+  Return(): any {
+    this.router.navigate(['/']);
+   }
 
 }

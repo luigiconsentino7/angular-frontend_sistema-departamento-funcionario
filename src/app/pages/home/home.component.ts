@@ -38,10 +38,11 @@ export class HomeComponent implements OnInit {
     const value = target.value.toLowerCase();
     this.departamentosList = this.departamentosListGeral.filter(departamento => {
       return departamento.nome.toLowerCase().includes(value);
-    })
+    });
   }
 
   OpenDialog(id: number) {
+    console.log(2)
     this.dialog.open(ExcluirDepartamentoComponent, {
       width: '450px',
       height: '450px',
@@ -64,13 +65,13 @@ export class HomeComponent implements OnInit {
   DisableDepartamento(id: number){
     this.departamentoService.DisableDepartamento(id).subscribe((data) => {
       location.reload()
-    })
+    });
   }
 
   EnableDepartamento(departamento: Departamentos, id: number){
     this.departamentoService.EnableDepartamento(departamento, id).subscribe((data) => {
       location.reload()
-    })
+    });
   }
 
 }
